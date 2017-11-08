@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Map</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="map-page">
+  <button ion-button id="button_start" (click)="petposition()">YourPet</button>
+  <button ion-button id="button_end" (click)="ourposition()">You</button>
+  <button ion-button id="nav" (click)="navto()">nav</button>
+  <div style="height: 100%; width: 100%" #mapCanvas id="container"></div>
+</ion-content>
