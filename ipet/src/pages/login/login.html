@@ -3,34 +3,34 @@
 		<button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-		<ion-title>登录</ion-title>
+		<ion-title>Login</ion-title>
 	</ion-navbar>
 </ion-header>
 
 <ion-content>
 	<div class="logo">
-		<img src="assets/img/Ipetlogo.png" alt="Ipet logo">
+		<img src="assets/img/login-01.png" alt="Ionic logo">
 	</div>
 
-	<form #loginForm="ngForm" novalidate class="list">
+	<form #loginForm="ngForm" novalidate>
 		<ion-list no-lines>
 			<ion-item>
-				<ion-label stacked color="black"  style="font-size:20px">用户名</ion-label>
-				<ion-input [(ngModel)]="login.username" class="input" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"placeholder = "Username"
+				<ion-label stacked color="primary">Username</ion-label>
+				<ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
 					required>
 				</ion-input>
 			</ion-item>
 			<p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
-				请输入用户名
+				Username is required
 			</p>
 
 			<ion-item>
-				<ion-label stacked color="black" style="font-size:20px">密码</ion-label>
-				<ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" placeholder = "Password"required>
+				<ion-label stacked color="primary">Password</ion-label>
+				<ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
 				</ion-input>
 			</ion-item>
 			<p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
-				请输入密码
+				Password is required
 			</p>
 		</ion-list>
 

@@ -20,4 +20,118 @@
   </div>
 
   <p>{{speaker?.about}}</p>
+  <ion-list class = "pet-information" >
+    <ion-item>
+      <ion-label>宠物性别</ion-label>
+      <ion-select [(ngModel)]="gender">
+        <ion-option value="f">MM</ion-option>
+        <ion-option value="m">GG</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+    <ion-label>宠物品种</ion-label>
+    <ion-select [(ngModel)]="breed">
+      <ion-option value="golden">金毛巡回猎犬</ion-option>
+      <ion-option value="huskie">哈士奇</ion-option>
+      <ion-option value="corgi">柯基</ion-option>
+      <ion-option value="borderllie">边境牧羊犬</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>宠物生日</ion-label>
+    <ion-select (ionChange)="monthChange($event)" interface="popover">
+      <ion-option value="01">January</ion-option>
+      <ion-option value="02">February</ion-option>
+      <ion-option value="03" selected="true">March</ion-option>
+      <ion-option value="04">April</ion-option>
+      <ion-option value="05">May</ion-option>
+      <ion-option value="06">June</ion-option>
+      <ion-option value="07">July</ion-option>
+      <ion-option value="08">August</ion-option>
+      <ion-option value="09">September</ion-option>
+      <ion-option value="10">October</ion-option>
+      <ion-option value="11">November</ion-option>
+      <ion-option value="12">December</ion-option>
+    </ion-select>
+    <ion-select (ionChange)="yearChange($event)" interface="popover">
+      <ion-option>2007</ion-option>
+      <ion-option>2008</ion-option>
+      <ion-option>2009</ion-option>
+      <ion-option>2010</ion-option>
+      <ion-option>2011</ion-option>
+      <ion-option selected="true">2012</ion-option>
+      <ion-option>2013</ion-option>
+      <ion-option>2014</ion-option>
+      <ion-option>2015</ion-option>
+      <ion-option>2016</ion-option>
+      <ion-option>2017</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>到家时间</ion-label>
+    <ion-select (ionChange)="monthChange($event)" interface="popover">
+      <ion-option value="01">January</ion-option>
+      <ion-option value="02">February</ion-option>
+      <ion-option value="03" selected="true">March</ion-option>
+      <ion-option value="04">April</ion-option>
+      <ion-option value="05">May</ion-option>
+      <ion-option value="06">June</ion-option>
+      <ion-option value="07">July</ion-option>
+      <ion-option value="08">August</ion-option>
+      <ion-option value="09">September</ion-option>
+      <ion-option value="10">October</ion-option>
+      <ion-option value="11">November</ion-option>
+      <ion-option value="12">December</ion-option>
+    </ion-select>
+    <ion-select (ionChange)="yearChange($event)" interface="popover">
+      <ion-option>2007</ion-option>
+      <ion-option>2008</ion-option>
+      <ion-option>2009</ion-option>
+      <ion-option>2010</ion-option>
+      <ion-option>2011</ion-option>
+      <ion-option selected="true">2012</ion-option>
+      <ion-option>2013</ion-option>
+      <ion-option>2014</ion-option>
+      <ion-option>2015</ion-option>
+      <ion-option>2016</ion-option>
+      <ion-option>2017</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>加入Ipet</ion-label>
+    <ion-select (ionChange)="monthChange($event)" interface="popover">
+      <ion-option value="01">January</ion-option>
+      <ion-option value="02">February</ion-option>
+      <ion-option value="03" selected="true">March</ion-option>
+      <ion-option value="04">April</ion-option>
+      <ion-option value="05">May</ion-option>
+      <ion-option value="06">June</ion-option>
+      <ion-option value="07">July</ion-option>
+      <ion-option value="08">August</ion-option>
+      <ion-option value="09">September</ion-option>
+      <ion-option value="10">October</ion-option>
+      <ion-option value="11">November</ion-option>
+      <ion-option value="12">December</ion-option>
+    </ion-select>
+    <ion-select (ionChange)="yearChange($event)" interface="popover">
+      <ion-option>2007</ion-option>
+      <ion-option>2008</ion-option>
+      <ion-option>2009</ion-option>
+      <ion-option>2010</ion-option>
+      <ion-option>2011</ion-option>
+      <ion-option selected="true">2012</ion-option>
+      <ion-option>2013</ion-option>
+      <ion-option>2014</ion-option>
+      <ion-option>2015</ion-option>
+      <ion-option>2016</ion-option>
+      <ion-option>2017</ion-option>
+    </ion-select>
+  </ion-item>
+    <button ion-item (click)="goToPetDetail(pet)">
+      宠物体重
+    </button>
+    <button ion-item (click)="goToPetDetail(pet)">
+      常用食品
+    </button>
+  </ion-list>
 </ion-content>

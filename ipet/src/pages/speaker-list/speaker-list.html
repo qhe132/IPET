@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Speakers</ion-title>
+    <ion-title>宠物信息</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -26,9 +26,9 @@
 
             <ion-card-content class="outer-content">
               <ion-list>
-                <button ion-item *ngFor="let session of speaker.sessions" (click)="goToSessionDetail(session)">
+                <!-- <button ion-item *ngFor="let session of speaker.sessions" (click)="goToSessionDetail(session)">
                   <h3>{{session.name}}</h3>
-                </button>
+                </button> -->
 
                 <button ion-item (click)="goToSpeakerDetail(speaker)">
                   <h3>About {{speaker.name}}</h3>
