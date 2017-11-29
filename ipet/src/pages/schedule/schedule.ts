@@ -11,7 +11,7 @@ import { AlertController, App, FabContainer, ItemSliding, List, ModalController,
 import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
 
-import { SessionDetailPage } from '../session-detail/session-detail';
+//import { SessionDetailPage } from '../session-detail/session-detail';
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 import { MapPage } from '../map/map';
 
@@ -74,7 +74,7 @@ export class SchedulePage {
 
   }
 
-  goToSessionDetail(sessionData: any) {
+  goToSessionDetail() {
     // go to the session detail page
     // and pass in the session data
 
