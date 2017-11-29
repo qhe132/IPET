@@ -13,6 +13,7 @@ import { UserData } from '../../providers/user-data';
 
 import { SessionDetailPage } from '../session-detail/session-detail';
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
+import { MapPage } from '../map/map';
 
 
 @Component({
@@ -77,7 +78,8 @@ export class SchedulePage {
     // go to the session detail page
     // and pass in the session data
 
-    this.navCtrl.push(SessionDetailPage, { sessionId: sessionData.id, name: sessionData.name });
+    //this.navCtrl.push(SessionDetailPage, { sessionId: sessionData.id, name: sessionData.name });
+    this.navCtrl.push(MapPage);
   }
 
   addFavorite(slidingItem: ItemSliding, sessionData: any) {

@@ -14,17 +14,14 @@
 
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="apple-touch-icon" href="assets/img/appicon.png">
-  
-  <script>
-    /*
-     * if ('serviceWorker' in navigator) {
-     *   navigator.serviceWorker.register('service-worker.js')
-     *     .then(() => console.log('service worker installed'))
-     *     .catch(err => console.log('Error', err));
-     * }
-     */
+  <script async defer src="https://maps.googleapis.com/maps/api/js"></script>
+  <script async defer  src="http://webapi.amap.com/maps?v=1.4.1&key=b84a9f608b796913db687b0a01284248&plugin=AMap.Walking"></script>
+  <script async defer >
+    var map = new AMap.Map('mapDiv', {
+       mapStyle: 'amap://styles/23feb01c5781b9945e532fe3b0d1b68f'//样式URL
+   });
   </script>
-  
+
   <link href="build/main.css" rel="stylesheet">
 
 </head>
@@ -46,14 +43,7 @@
   <script src="build/main.js"></script>
 
   <!-- google maps script is loaded last as to not block rendering -->
-  
-  <script async defer src="https://maps.googleapis.com/maps/api/js"></script>
-  <script async defer  src="http://webapi.amap.com/maps?v=1.4.1&key=b84a9f608b796913db687b0a01284248&plugin=AMap.Walking"></script>
-  <script async defer >
-    var map = new AMap.Map('mapDiv', {
-       mapStyle: 'amap://styles/23feb01c5781b9945e532fe3b0d1b68f'//样式URL
-   });
-  </script>
+
 
 </body>
 

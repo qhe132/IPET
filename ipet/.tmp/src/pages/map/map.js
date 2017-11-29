@@ -18,19 +18,135 @@ var MapPage = (function () {
     MapPage.prototype.ionViewDidLoad = function () {
         var map = new AMap.Map('container', {
             resizeEnable: true,
+            rotateEnable: true,
+            pitchEnable: true,
+            pitch: 60,
+            rotation: -10,
             zoom: 15,
+            viewMode: '3D',
+            buildingAnimation: true,
+            expandZoomRange: true,
+            zooms: [3, 15],
             center: [120.388381, 30.3086194]
         });
-        AMap.plugin(['AMap.ToolBar'], function () {
-            map.addControl(new AMap.ToolBar());
-        });
         var marker = new AMap.Marker({
+            icon: "http://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
             position: map.getCenter(),
-            draggable: true,
-            cursor: 'move'
         });
         marker.setMap(map);
-        marker.setAnimation('AMAP_ANIMATION_BOUNCE');
+        /*AMap.plugin(['AMap.ToolBar'],function(){
+          map.addControl(new AMap.ToolBar());
+        });*/
+        AMap.plugin(['AMap.ControlBar'], function () {
+            map.addControl(new AMap.ControlBar({
+                showZoomBar: false,
+                showControlButton: true,
+                position: {
+                    right: '10px',
+                    top: '10px'
+                }
+            }));
+        });
+        /*marker.setMap(map);
+        marker.setAnimation('AMAP_ANIMATION_BOUNCE');*/
+    };
+    MapPage.prototype.ourposition = function () {
+        var map = new AMap.Map('container', {
+            resizeEnable: true,
+            rotateEnable: true,
+            pitchEnable: true,
+            pitch: 60,
+            rotation: -10,
+            zoom: 15,
+            viewMode: '3D',
+            buildingAnimation: true,
+            expandZoomRange: true,
+            zooms: [3, 15],
+            center: [120.388381, 30.3086194]
+        });
+        var marker = new AMap.Marker({
+            icon: "http://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+            position: map.getCenter(),
+        });
+        marker.setMap(map);
+        AMap.plugin(['AMap.ControlBar'], function () {
+            map.addControl(new AMap.ControlBar({
+                showZoomBar: false,
+                showControlButton: true,
+                position: {
+                    right: '10px',
+                    top: '10px'
+                }
+            }));
+        });
+    };
+    MapPage.prototype.petposition = function () {
+        var map = new AMap.Map('container', {
+            resizeEnable: true,
+            rotateEnable: true,
+            pitchEnable: true,
+            pitch: 60,
+            rotation: -10,
+            zoom: 15,
+            viewMode: '3D',
+            buildingAnimation: true,
+            expandZoomRange: true,
+            zooms: [3, 15],
+            center: [120.388381, 30.3386194]
+        });
+        var marker = new AMap.Marker({
+            icon: "http://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+            position: map.getCenter(),
+        });
+        marker.setMap(map);
+        AMap.plugin(['AMap.ControlBar'], function () {
+            map.addControl(new AMap.ControlBar({
+                showZoomBar: false,
+                showControlButton: true,
+                position: {
+                    right: '10px',
+                    top: '10px'
+                }
+            }));
+        });
+    };
+    MapPage.prototype.navto = function () {
+        var map = new AMap.Map('container', {
+            resizeEnable: true,
+            rotateEnable: true,
+            pitchEnable: true,
+            pitch: 60,
+            rotation: -10,
+            zoom: 15,
+            viewMode: '3D',
+            buildingAnimation: true,
+            expandZoomRange: true,
+            zooms: [3, 15],
+            center: [120.388381, 30.3086194]
+        });
+        var marker = new AMap.Marker({
+            icon: "http://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+            position: map.getCenter(),
+        });
+        var walking = new AMap.Walking({
+            map: map,
+            panel: ""
+        });
+        walking.search([120.388381, 30.3086194], [120.388381, 30.3386194]);
+        marker.setMap(map);
+        /*AMap.plugin(['AMap.ToolBar'],function(){
+          map.addControl(new AMap.ToolBar());
+        });*/
+        AMap.plugin(['AMap.ControlBar'], function () {
+            map.addControl(new AMap.ControlBar({
+                showZoomBar: false,
+                showControlButton: true,
+                position: {
+                    right: '10px',
+                    top: '10px'
+                }
+            }));
+        });
     };
     return MapPage;
 }());
@@ -40,7 +156,7 @@ __decorate([
 ], MapPage.prototype, "mapElement", void 0);
 MapPage = __decorate([
     Component({
-        selector: 'page-map',template:/*ion-inline-start:"D:\国创\Ionic\ipet\src\pages\map\map.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Map</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="map-page">\n  <button ion-button id="button_start" (click)="petposition()">YourPet</button>\n  <button ion-button id="button_end" (click)="ourposition()">You</button>\n  <button ion-button id="nav" (click)="navto()">nav</button>\n  <div style="height: 100%; width: 100%" #mapCanvas id="container"></div>\n</ion-content>\n'/*ion-inline-end:"D:\国创\Ionic\ipet\src\pages\map\map.html"*/
+        selector: 'page-map',template:/*ion-inline-start:"/Users/qianhuaien/Workspace/ipet/next/src/pages/map/map.html"*/'\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Map</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="map-page">\n  <button ion-button id="button_start" (click)="petposition()">YourPet</button>\n  <button ion-button id="button_end" (click)="ourposition()">You</button>\n  <button ion-button id="nav" (click)="navto()">nav</button>\n  <div style="height: 100%; width: 100%" #mapCanvas id="container"></div>\n</ion-content>\n'/*ion-inline-end:"/Users/qianhuaien/Workspace/ipet/next/src/pages/map/map.html"*/
     }),
     __metadata("design:paramtypes", [ConferenceData, Platform])
 ], MapPage);
